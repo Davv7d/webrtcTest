@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title> Just simpla page</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <style>
+            body{
+                background:  #eee;
+                padding: 5% 0;
+            }
+            video{
+                background: black;
+                border:  2px solid gray;
+            }
+            #loginPage{
+                border:  2px solid grey;
+            }
+            #callPage{
+                position: relative;
+                display: block;
+                margin: 1% auto;
+                border:  2px solid grey;
+            
+            }
+            #localVideo{
+                min-width: 50px;
+                max-width: 100px;
+                /* height: 150px; */
+                position: absolute;
+                top: 5%;
+                right: 5%;
+            }
+            #remoteVideo{
+                margin: 1%;
+                min-height: 300px;
+                width: 98%;
+                max-height: 700px;
+ 
+            }
+            button{
+                margin: 10px auto;
+            }
+            #errorLoginMessage{
+                color: red;
+            }
+            tr{
+                padding: 5px;
+                padding-left: 10px;
+            }
+            #sendMesage{
+                position: relative;
+                /* top: 60%; */
+            }
+            #chatBox{
+                border: 3px solid black;
+                background-color: aliceblue;
+                min-height:  400px;
+
+            }
+            .imgChat{
+                width: 300px;
+                height: 200px;
+                border: 1px solid #ccc;
+            }
+            b{
+                color: blue;
+            }
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+                            <!-- Login Page -->
+        <div id="loginPage" class="container text-center">
+            <div class="row">
+                <div class="col align-self-center">
+                <h2>Join our chat now</h2>
+                    <label for="loginInput" class="sr-only">Write your Nickname</label>
+                    <input id = 'loginInput' type="text" class = "form-control formgroup" placeholder = "Login" required = "" autofocus = "" />
+                    <span id="errorLoginMessage"> </span>
+                    <button id="connectToServerBtn" class = "btn btn-lg btn-primary btnblock">Sign in</button>
+              </div>
+            </div>
+            
+        </div>
+        
+
+                            <!-- Call Page -->
+        <div id="callPage">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div id="VideoBoxShowingPart" class="col-md-12">
+                            <video id="localVideo" autoplay muted></video>
+                            <video id="remoteVideo" autoplay muted></video>
+                    </div>
+                    <div class="col-md-12" id="chatBoxAll">
+                        <div id="writeText" class="col-md-12">
+                            <div id="chatBox" class = "panel-body text-left col-12" disabled>
+                        </div>
+                        </div>
+                        <div class="col-md-12">    
+                            <label for="comment">Add Comment:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <!-- <form id="fileInfo">
+                                <input type="file" id="fileInput" name="files"/>
+                            </form> -->
+                        </div>
+                        <div class="col-md-3 " ><button id="sendMessage" class="btn btn-success">Send</button></div>
+                        
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-3">      <!-- Do ogarnięcia !!! -->
+                    <div id="loggedUsersList">
+                        <!--<input type="text" id = "otherUsernameInput"/>-->
+                        <table class='table table-bordered' style="width:  80%;">
+                            <thead><tr><h2><b>Users Online</b></h2></tr></thead>
+                            <div class="btn-group-vertical" id="userListBtn"></div>
+                             <div id="buttons">
+                                <button id="callTypeAudio" class="btn btn-dark" value="0">Audio</button>
+                                <button id="callTypeVideo" class="btn btn-dark" value="0">Video</button>
+                                <button id="callTypeChat" class="btn btn-dark" value="0">Chat</button></br>
+                                <button id="ConnectToOtherUsernameBtn" class = "btn-success btn">Call</button>
+                                <button id="hangUpBtn" class="btn-danger btn">Hang Up</button>
+                                <button id="refreshUserListBtn" class = "btn-primary btn">Refresh</button> 
+                                <button id="logOutBtn" class="btn btn-dark">Log out</button>
+                             </div>  
+                            
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+        <script src  = "client.js"></script>
+
+    </body>
+
+
+</html> 

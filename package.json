@@ -1,0 +1,27 @@
+{
+  "name": "serwer",
+  "version": "1.0.0",
+  "description": "first try making signaling server for webrtc",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parse": "npx browserify ./website/client.js -o ./website/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davv7d/webrtcTest"
+  },
+  "author": "Dawid",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^16.3.0",
+    "express": "^4.17.1",
+    "reconnecting-websocket": "^4.1.10",
+    "ws": "^7.4.6"
+  },
+  "bugs": {
+    "url": "https://github.com/Davv7d/webrtcTest/issues"
+  },
+  "homepage": "https://github.com/Davv7d/webrtcTest#readme"
+}
